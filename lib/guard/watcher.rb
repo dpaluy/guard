@@ -61,7 +61,7 @@ module Guard
     end
 
     def match(string_or_pathname)
-      m = pattern.match(string_or_pathname)
+      m = pattern ? pattern.match(string_or_pathname) : nil
       m.nil? ? nil : Pattern::MatchResult.new(m, string_or_pathname)
     end
 
